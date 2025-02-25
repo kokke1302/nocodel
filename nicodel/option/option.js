@@ -1,4 +1,4 @@
-const div = document.getElementById("up-list");
+const li = document.getElementById("upList");
 const form = document.getElementById("newName");
 const addname = document.getElementById("name");
 const reset = document.getElementById("reset");
@@ -14,25 +14,25 @@ function del(index){
 }
 
 function chdiv(){
-	while(div.firstElementChild) div.removeChild(div.firstElementChild);
+	while(li.firstElementChild) li.removeChild(li.firstElementChild);
 
 	list.forEach((up, index)=>{
-		let tr = document.createElement("tr");
-		let td1 = document.createElement("td");
-		let td2 = document.createElement("td");
-		let btn = document.createElement("button");
+		let block = document.createElement("tr");
+		let upname = document.createElement("td");
+		let tdbtn = document.createElement("td");
+		let btn = document.createElement("div");
+		btn.classList.add("btnX");
 
-		let str = "uptr" + index;
-		btn.type = "submit";
+		let str = "upblock" + index;
 		btn.addEventListener("click", ()=>{del(index)});
 		btn.textContent = "X";
-		td1.textContent = up;
-		tr.id = str;
+		upname.textContent = up;
+		block.id = str;
 
-		td2.appendChild(btn);
-		tr.appendChild(td1);
-		tr.appendChild(td2);
-		div.appendChild(tr);
+		block.appendChild(upname);
+		tdbtn.appendChild(btn);
+		block.appendChild(tdbtn);
+		li.appendChild(block);
 	})
 }
 
