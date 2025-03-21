@@ -16,7 +16,7 @@
 
 	"content_scripts": [
 		{
-			"matches": ["https://www.nicovideo.jp/my/*"],
+			"matches": ["https://www.nicovideo.jp/my*"],
 			"js": ["front/index.js"]
 		}
 	],
